@@ -3,24 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "vinext dev",
+    "build": "vinext build",
+    "start": "vinext start",
+    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint . --ignore-pattern dist --ignore-pattern .next",
+    "check:vinext": "vinext check",
+    "dev:vinext": "vinext dev --port 3001",
+    "build:vinext": "vinext build"
   },
   "dependencies": {
+    "next": "^15.5.14",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.0"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "@vitejs/plugin-react": "^6.0.1",
+    "@vitejs/plugin-rsc": "^0.5.21",
     "eslint": "^9",
-    "eslint-config-next": "15.3.0"
-  }
+    "eslint-config-next": "15.3.0",
+    "postcss": "^8",
+    "react-server-dom-webpack": "^19.2.4",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5",
+    "vinext": "^0.0.33",
+    "vite": "^8.0.1"
+  },
+  "type": "module"
 }

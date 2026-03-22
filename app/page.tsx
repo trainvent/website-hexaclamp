@@ -2,114 +2,165 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <main className="relative overflow-hidden">
+      <div className="page-shell">
+        <section className="hero-grid">
+          <div className="space-y-8">
+            <div className="eyebrow">Modular honeycomb building system</div>
+            <div className="space-y-5">
+              <h1 className="hero-title">
+                Build hexagon shelves, displays, and custom objects with one
+                clamp system.
+              </h1>
+              <p className="hero-copy">
+                HexaClamp is an easy way to prototype furniture and spatial
+                ideas based on the honeycomb shape. Instead of redesigning every
+                connector, you can reuse the same clamp logic to test shelves,
+                sculptural storage, or entirely new hexagonal products.
+              </p>
+            </div>
 
-      <div className="relative z-[-1] flex flex-col gap-3 place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div>
-          on GitLab Pages
-        </div>
-      </div>
+            <div className="flex flex-wrap gap-4">
+              <a className="cta-primary" href="#prototype">
+                See the prototype
+              </a>
+              <a className="cta-secondary" href="#how-it-works">
+                How it works
+              </a>
+            </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+            <dl className="stats-grid">
+              <div className="stat-card">
+                <dt>Idea</dt>
+                <dd>One clamp, many hex forms</dd>
+              </div>
+              <div className="stat-card">
+                <dt>Use cases</dt>
+                <dd>Shelves, room dividers, display objects</dd>
+              </div>
+              <div className="stat-card">
+                <dt>Status</dt>
+                <dd>CAD prototypes and physical testing</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div className="hero-visual">
+            <div className="hero-image-card hero-image-main">
+              <Image
+                src="/proto_center.png"
+                alt="Front view CAD prototype of the HexaClamp connector"
+                width={467}
+                height={431}
+                priority
+              />
+            </div>
+            <div className="hero-image-card hero-image-detail">
+              <Image
+                src="/proto_side.png"
+                alt="Side view CAD prototype of the HexaClamp connector"
+                width={443}
+                height={409}
+              />
+            </div>
+            <div className="floating-note">
+              Designed to make honeycomb structures feel practical, reusable,
+              and quick to assemble.
+            </div>
+          </div>
+        </section>
+
+        <section className="section-grid" id="how-it-works">
+          <div className="section-heading">
+            <p className="section-kicker">Why HexaClamp</p>
+            <h2>A simple tool for a shape that usually gets complicated fast.</h2>
+          </div>
+          <div className="feature-grid">
+            <article className="feature-card">
+              <h3>Design faster</h3>
+              <p>
+                Explore the hexagon as a construction logic instead of treating
+                every object as a one-off design problem.
+              </p>
+            </article>
+            <article className="feature-card">
+              <h3>Prototype physically</h3>
+              <p>
+                Move from CAD to hands-on tests with connectors that are built
+                to validate fit, structure, and composition.
+              </p>
+            </article>
+            <article className="feature-card">
+              <h3>Scale the system</h3>
+              <p>
+                Start with a small shelf module and expand toward larger
+                furniture pieces, displays, or custom interior concepts.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section className="prototype-panel" id="prototype">
+          <div className="prototype-copy">
+            <p className="section-kicker">Prototype snapshot</p>
+            <h2>Two CAD test files, one modular vision.</h2>
+            <p>
+              These early studies show the clamp from the center and the side.
+              The goal is not just a single part, but a toolkit for making
+              honeycomb geometry usable in real objects.
+            </p>
+            <p>
+              HexaClamp is aimed at makers, furniture tinkerers, and anyone who
+              wants to create hex-based structures without rebuilding the whole
+              connection strategy from scratch.
+            </p>
+          </div>
+          <div className="prototype-gallery">
+            <figure className="gallery-card">
+              <Image
+                src="/proto_center.png"
+                alt="HexaClamp prototype front view"
+                width={467}
+                height={431}
+              />
+              <figcaption>Center view</figcaption>
+            </figure>
+            <figure className="gallery-card">
+              <Image
+                src="/proto_side.png"
+                alt="HexaClamp prototype side view"
+                width={443}
+                height={409}
+              />
+              <figcaption>Side view</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section className="closing-banner">
+          <p className="section-kicker">What comes next</p>
+          <h2>
+            A growing system for creating bold, lightweight honeycomb furniture.
           </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
+          <p>
+            HexaClamp begins with clamp geometry, but the bigger idea is a clean
+            and accessible way to generate shelves and other hexagonal objects
+            with less friction and more creative freedom.
           </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://docs.gitlab.com/ee/user/project/pages/"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Learn more about deploying your site with GitLab Pages.
-          </p>
-        </a>
+          <div className="closing-actions">
+            <a className="cta-primary" href="mailto:hello@trainvent.com">
+              Contact via email
+            </a>
+            <a
+              className="cta-secondary"
+              href="https://next.trainvent.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit Trainvent
+            </a>
+          </div>
+        </section>
       </div>
     </main>
   );
