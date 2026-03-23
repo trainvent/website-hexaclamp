@@ -1,5 +1,8 @@
 import Image from "next/image";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const withBasePath = (path: string) => `${basePath}${path}`;
+
 export default function Home() {
   return (
     <main className="relative overflow-hidden">
@@ -48,19 +51,21 @@ export default function Home() {
           <div className="hero-visual">
             <div className="hero-image-card hero-image-main">
               <Image
-                src="/proto_center.png"
+                src={withBasePath("/proto_center.png")}
                 alt="Front view CAD prototype of the HexaClamp connector"
                 width={467}
                 height={431}
                 priority
+                unoptimized
               />
             </div>
             <div className="hero-image-card hero-image-detail">
               <Image
-                src="/proto_side.png"
+                src={withBasePath("/proto_side.png")}
                 alt="Side view CAD prototype of the HexaClamp connector"
                 width={443}
                 height={409}
+                unoptimized
               />
             </div>
             <div className="floating-note">
@@ -118,19 +123,21 @@ export default function Home() {
           <div className="prototype-gallery">
             <figure className="gallery-card">
               <Image
-                src="/proto_center.png"
+                src={withBasePath("/proto_center.png")}
                 alt="HexaClamp prototype front view"
                 width={467}
                 height={431}
+                unoptimized
               />
               <figcaption>Center view</figcaption>
             </figure>
             <figure className="gallery-card">
               <Image
-                src="/proto_side.png"
+                src={withBasePath("/proto_side.png")}
                 alt="HexaClamp prototype side view"
                 width={443}
                 height={409}
+                unoptimized
               />
               <figcaption>Side view</figcaption>
             </figure>

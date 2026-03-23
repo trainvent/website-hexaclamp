@@ -6,6 +6,7 @@ before_script:
 create-pages:
   stage: build
   script:
+    - export NEXT_PUBLIC_BASE_PATH="$(node -e "const url = process.env.CI_PAGES_URL; if (!url) process.exit(1); process.stdout.write(new URL(url).pathname.replace(/\\/$/, ''))")"
     - npm run build
   pages:
     publish: dist/client
