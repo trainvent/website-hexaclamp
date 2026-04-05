@@ -13,14 +13,12 @@ Run `npm run build` to generate the static export in `out/`.
 
 ## GitHub Pages deployment
 
-The repository remote is `Trainvent/website-hexaclamp`, there is no `CNAME` file, and the default branch is `master`, so the current deployment target is the project Pages subpath:
+The repository remote is `Trainvent/website-hexaclamp`, the default branch is `master`, and the site is configured for the custom domain:
 
-`https://trainvent.github.io/website-hexaclamp/`
+`https://hexaclamp.com/`
 
-For that hosting mode, the GitHub Actions workflow sets:
+For custom-domain hosting, `PAGES_BASE_PATH` must be left empty so the exported site uses root asset paths such as `/assets/...` and `/proto_center.png`.
 
-`PAGES_BASE_PATH=website-hexaclamp`
+The custom domain is published through `public/CNAME`.
 
-That keeps asset and route URLs under `/website-hexaclamp/...` so the exported site stays styled on GitHub Pages.
-
-If you later move the site to a custom domain or a root-level Pages site, leave `PAGES_BASE_PATH` empty and add `public/CNAME` if needed.
+If you later move the site back to GitHub project Pages at `https://trainvent.github.io/website-hexaclamp/`, set `PAGES_BASE_PATH=website-hexaclamp` in the workflow again.

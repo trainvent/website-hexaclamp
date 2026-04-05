@@ -18,8 +18,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      PAGES_BASE_PATH: website-hexaclamp
     steps:
       - name: Checkout
         uses: actions/checkout@v4
