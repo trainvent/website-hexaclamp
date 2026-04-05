@@ -1,91 +1,26 @@
-![Build Status](https://gitlab.com/pages/<project>/badges/master/build.svg)
+# HexaClamp Website
 
----
+This project is deployed to GitHub Pages with GitHub Actions.
 
-Example [Next.js](https://nextjs.org) website using GitLab Pages.
+## Local development
 
-Learn more about GitLab Pages at https://pages.gitlab.io and the official
-documentation https://docs.gitlab.com/ce/user/project/pages/.
+1. Install dependencies with `npm install`.
+2. Start the dev server with `npm run dev`.
 
----
+## Production build
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+Run `npm run build` to generate the static export in `out/`.
 
-- [GitLab CI](#gitlab-ci)
-- [Building locally](#building-locally)
-- [Add base path in Next.js when unique domain is disabled](#add-base-path-in-nextjs-when-unique-domain-is-disabled)
-- [GitLab User or Group Pages](#gitlab-user-or-group-pages)
-- [Did you fork this project?](#did-you-fork-this-project)
-- [Troubleshooting](#troubleshooting)
+## GitHub Pages deployment
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+The repository remote is `Trainvent/website-hexaclamp`, there is no `CNAME` file, and the default branch is `master`, so the current deployment target is the project Pages subpath:
 
-## GitLab CI
+`https://trainvent.github.io/website-hexaclamp/`
 
-This project's static Pages are built by [GitLab CI][ci], following the steps
-defined in [`.gitlab-ci.yml`](.gitlab-ci.yml):
+For that hosting mode, the GitHub Actions workflow sets:
 
-contents of .gitlab-ci.yml in codeblock
+`PAGES_BASE_PATH=website-hexaclamp`
 
-## Building locally
+That keeps asset and route URLs under `/website-hexaclamp/...` so the exported site stays styled on GitHub Pages.
 
-To work locally with this project, you'll have to follow the steps below:
-
-1. Fork, clone or download this project
-1. Install dependencies: `npm install`
-1. Preview your project: `npm run dev`
-1. Add content
-
-Read more at the Next.js [documentation](https://nextjs.org/docs).
-
-## Add base path in Next.js when unique domain is disabled
-
-If you [disable the unique domain](https://docs.gitlab.com/user/project/pages/#unique-domains),
-the site will be hosted under `yourname.gitlab.io/examplerepository/`,
-you will need to configure Next.js to use the `basePath`.
-
-In `next.config.mjs`, the value for `basePath` should be your project’s name,
-starting with a forward slash - for example, `/examplerepository`.
-This ensures Next.js understands that your website’s root is `/examplerepository` instead of the default `/`,
-especially when your project is hosted at `https://gitlab.com/yourname/examplerepository/`.
-
-```js:title=next.config.mjs
-const nextConfig = {
-  basePath: '/examplerepository',
-};
-export default nextConfig;
-```
-
-## GitLab User or Group Pages
-
-To use this project as your user/group website, you will need one additional
-step: just rename your project to `namespace.gitlab.io`, where `namespace` is
-your `username` or `groupname`. This can be done by navigating to your
-project's **Settings**.
-
-Read more about [user/group Pages][userpages] and [project Pages][projpages].
-
-## Did you fork this project?
-
-If you forked this project for your own use, please go to your project's
-**Settings** and remove the forking relationship, which won't be necessary
-unless you want to contribute back to the upstream project.
-
-## Troubleshooting
-
-1. CSS is missing! That means two things:
-
-   Either that you have wrongly set up the CSS URL in your templates, or
-   your static generator has a configuration option that needs to be explicitly
-   set in order to serve static assets under a relative URL.
-
-[ci]: https://about.gitlab.com/gitlab-ci/
-[<project>]: http://link-to-project-main-page
-[install]: http://link-to-install-page
-[documentation]: http://link-to-main-documentation-page
-[userpages]: https://docs.gitlab.com/ce/user/project/pages/introduction.html#user-or-group-pages
-[projpages]: https://docs.gitlab.com/ce/user/project/pages/introduction.html#project-pages
-
-----
+If you later move the site to a custom domain or a root-level Pages site, leave `PAGES_BASE_PATH` empty and add `public/CNAME` if needed.

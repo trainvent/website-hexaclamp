@@ -1,7 +1,5 @@
 import Image from "next/image";
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-const withBasePath = (path: string) => `${basePath}${path}`;
+import { withPagesBasePath } from "../lib/pages-base-path";
 
 export default function Home() {
   return (
@@ -51,7 +49,7 @@ export default function Home() {
           <div className="hero-visual">
             <div className="hero-image-card hero-image-main">
               <Image
-                src={withBasePath("/proto_center.png")}
+                src={withPagesBasePath("/proto_center.png")}
                 alt="Front view CAD prototype of the HexaClamp connector"
                 width={467}
                 height={431}
@@ -61,7 +59,7 @@ export default function Home() {
             </div>
             <div className="hero-image-card hero-image-detail">
               <Image
-                src={withBasePath("/proto_side.png")}
+                src={withPagesBasePath("/proto_side.png")}
                 alt="Side view CAD prototype of the HexaClamp connector"
                 width={443}
                 height={409}
@@ -123,7 +121,7 @@ export default function Home() {
           <div className="prototype-gallery">
             <figure className="gallery-card">
               <Image
-                src={withBasePath("/proto_center.png")}
+                src={withPagesBasePath("/proto_center.png")}
                 alt="HexaClamp prototype front view"
                 width={467}
                 height={431}
@@ -133,7 +131,7 @@ export default function Home() {
             </figure>
             <figure className="gallery-card">
               <Image
-                src={withBasePath("/proto_side.png")}
+                src={withPagesBasePath("/proto_side.png")}
                 alt="HexaClamp prototype side view"
                 width={443}
                 height={409}
@@ -143,7 +141,7 @@ export default function Home() {
             </figure>
             <figure className="gallery-card gallery-card-photo">
               <Image
-                src={withBasePath("/Protoypes_naked.jpg")}
+                src={withPagesBasePath("/Protoypes_naked.jpg")}
                 alt="Physical HexaClamp prototype photographed upright"
                 width={3072}
                 height={4096}
