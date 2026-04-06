@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   title: "HexaClamp",
   description:
     "A modular clamp system for building honeycomb shelves, displays, and custom hexagonal objects.",
+  icons: {
+    icon: "/clamp_2d.png",
+    shortcut: "/clamp_2d.png",
+    apple: "/clamp_2d.png",
+  },
 };
 
 export default function RootLayout({
