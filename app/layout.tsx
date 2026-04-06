@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   description:
     "A modular clamp system for building honeycomb shelves, displays, and custom hexagonal objects.",
   icons: {
-    icon: "/clamp_2d.png",
-    shortcut: "/clamp_2d.png",
-    apple: "/clamp_2d.png",
+    icon: "/clamp_icon_1024.png",
+    shortcut: "/clamp_icon_1024.png",
+    apple: "/clamp_icon_1024.png",
   },
 };
 
